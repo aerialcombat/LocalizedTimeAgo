@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.1
 
 //  Package.swift
 //
@@ -26,18 +26,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "LocalizedTimeAgo",
-    defaultLocalization: "en",
+    name: "Joey",
+    dependencies: [
+        .Package(url: "https://github.com/aerialcombat/LocalizedTimeAgo",
+                 majorVersion: 1, minor: 3)
+    ],
     products: [
         .library(
             name: "LocalizedTimeAgo",
-            targets: ["LocalizedTimeAgo"]
-        )
+            targets: ["LocalizedTimeAgo"]),
     ],
     targets: [
-        .target(
-            name: "LocalizedTimeAgo",
-            exclude: ["Info.plist"]
-        )
+        .target(name: "LocalizedTimeAgo")
     ]
 )
